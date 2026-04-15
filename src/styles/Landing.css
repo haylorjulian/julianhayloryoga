@@ -1,0 +1,110 @@
+.landing {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-cream);
+  overflow: hidden;
+}
+
+/* Vertical breath line — a subtle animated element */
+.landing__breath-line {
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  width: 1px;
+  height: 0;
+  background-color: var(--color-charcoal);
+  opacity: 0.15;
+  animation: breathe 6s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%   { height: 0; top: 50%; opacity: 0; }
+  50%  { height: 20vh; top: 40%; opacity: 0.15; }
+  100% { height: 0; top: 50%; opacity: 0; }
+}
+
+.landing__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+  z-index: 1;
+}
+
+.landing__epigraph {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 2.5rem;
+}
+
+.landing__name {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--color-charcoal);
+  margin: 0;
+}
+
+.landing__tagline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--color-muted);
+  margin-top: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.landing__subtitle {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-top: 3rem;
+  max-width: 30ch;
+  line-height: 1.8;
+}
+
+/* Scroll hint at bottom */
+.landing__scroll-hint {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.landing__scroll-text {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.landing__scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--color-charcoal), transparent);
+  opacity: 0.3;
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.4; }
+}
