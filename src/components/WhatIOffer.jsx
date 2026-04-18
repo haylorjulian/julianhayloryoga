@@ -8,11 +8,19 @@ import '../styles/WhatIOffer.css';
  *   - Large serif "Offerings" title in the top-left
  *   - Vertical list of category labels running down the bottom-left
  *   - Three cards on the right, each with: label, sub-label,
- *     B&W photograph, description text, and a "/ Read" link
+ *     B&W photograph, description text, and a "/ Book" link that
+ *     opens the user's email client, pre-addressed for booking.
  */
 function WhatIOfferSection() {
   const title = useReveal();
   const grid = useReveal();
+
+  const buildBookingHref = (subject) => {
+    const params = new URLSearchParams();
+    if (subject) params.set('subject', subject);
+    const query = params.toString();
+    return `mailto:${WHAT_I_OFFER.bookingEmail}${query ? `?${query}` : ''}`;
+  };
 
   return (
     <section className="offerings">
@@ -44,7 +52,12 @@ function WhatIOfferSection() {
               <img src={item.imageUrl} alt={item.imageAlt} loading="lazy" />
             </div>
             <p className="offering-description">{item.description}</p>
-            <span className="offering-cta">{item.cta}</span>
+            <a
+              href={buildBookingHref(item.subject)}
+              className="offering-cta"
+            >
+              {WHAT_I_OFFER.ctaLabel}
+            </a>
           </article>
         ))}
       </div>

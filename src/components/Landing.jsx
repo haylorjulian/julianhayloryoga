@@ -19,7 +19,11 @@ function Landing() {
       <div className="landing-ornament" aria-hidden="true" />
 
       <h1 className="landing-title">
-        <RichText parts={LANDING.title} separator="br" />
+        {LANDING.titleLines.map((line, i) => (
+          <span key={i} className="landing-title-line">
+            <RichText parts={line} />
+          </span>
+        ))}
       </h1>
 
       <p className="landing-sub">{LANDING.subtitle}</p>

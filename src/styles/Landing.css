@@ -41,6 +41,11 @@
   color: var(--accent);
 }
 
+/* Each line of the headline is a block so they stack vertically */
+.landing-title-line {
+  display: block;
+}
+
 .landing-sub {
   font-weight: 300;
   font-size: clamp(0.75rem, 1.2vw, 0.95rem);
@@ -73,16 +78,18 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Scroll hint at the bottom */
+/* Scroll hint at the bottom — spans full width so its children center reliably */
 .scroll-hint {
   position: absolute;
   bottom: 3rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
+  pointer-events: none;
   animation: fadeUp 1.2s ease-out 2s both;
 }
 

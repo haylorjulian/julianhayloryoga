@@ -61,7 +61,13 @@ function Closing() {
         ))}
       </div>
 
-      <div className="closing-footer">{CLOSING.footer}</div>
+      <div className="closing-alliance" aria-hidden="true">
+        <img
+          src={CLOSING.alliance.imageUrl}
+          alt={CLOSING.alliance.imageAlt}
+          loading="lazy"
+        />
+      </div>
     </section>
   );
 }

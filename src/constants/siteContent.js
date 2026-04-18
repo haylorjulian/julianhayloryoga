@@ -14,8 +14,14 @@ export const SITE_META = {
 };
 
 // ─── SECTION 1: LANDING ───
+// titleLines is an array where each inner array represents a single line
+// of the headline. Inside a line you can mix strings and { em: "..." }
+// objects to mark italic emphasis.
 export const LANDING = {
-  title: ['Returning to', 'the ', { em: 'Roots' }],
+  titleLines: [
+    ['Returning to'],
+    ['the ', { em: 'Roots' }],
+  ],
   subtitle: 'Traditional Hatha Yoga \u00b7 Sivananda Lineage',
   breath: 'Breathe in stillness',
   scroll: 'Scroll',
@@ -49,10 +55,14 @@ export const ABOUT_ME = {
 };
 
 // ─── SECTION 3: WHAT I OFFER ───
+// The CTA on each card opens the user's email client, pre-addressed
+// to the bookingEmail below.
 export const WHAT_I_OFFER = {
   heading: 'Offerings',
   sectionLabel: 'Journal of Practice',
   leftMeta: ['Private', 'Group', 'Immersive'],
+  bookingEmail: 'haylorjulian@gmail.com',
+  ctaLabel: '/ Book',
   items: [
     {
       label: '/ Private',
@@ -60,7 +70,7 @@ export const WHAT_I_OFFER = {
       imageUrl: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&q=80',
       imageAlt: 'Private yoga session',
       description: 'Guidance tailored to your body, breath, and intention. For beginners or those seeking a deeper, personal exploration.',
-      cta: '/ Read',
+      subject: 'Enquiry \u2014 Private Session',
     },
     {
       label: '/ Group',
@@ -68,7 +78,7 @@ export const WHAT_I_OFFER = {
       imageUrl: 'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80',
       imageAlt: 'Group yoga practice',
       description: 'Traditional Sivananda sequences in small, intimate settings. Mantra, prāṇāyāma, sun salutations, and deep relaxation.',
-      cta: '/ Read',
+      subject: 'Enquiry \u2014 Group Classes',
     },
     {
       label: '/ Immersive',
@@ -76,7 +86,7 @@ export const WHAT_I_OFFER = {
       imageUrl: 'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=600&q=80',
       imageAlt: 'Yoga retreat setting',
       description: 'Extended sessions on yogic philosophy, breathing, and meditation. Step away from the noise and reconnect with what matters.',
-      cta: '/ Read',
+      subject: 'Enquiry \u2014 Workshops & Retreats',
     },
   ],
 };
@@ -91,5 +101,8 @@ export const CLOSING = {
     { label: 'Instagram', url: 'https://instagram.com/julianhayloryoga' },
     { label: 'Email', url: 'mailto:haylorjulian@gmail.com' },
   ],
-  footer: '\u00a9 2026 \u00b7 All rights reserved',
+  alliance: {
+    imageUrl: '/images/yogaAlliance.jpg',
+    imageAlt: 'Yoga Alliance E-RYT 200 and RYS 200 certifications',
+  },
 };

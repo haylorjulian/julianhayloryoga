@@ -114,6 +114,8 @@
   margin-bottom: 0.75rem;
 }
 
+/* Booking link — hover behaviour matches the social links in the closing
+   section: underline grows from left to right, colour shifts to accent. */
 .offering-cta {
   font-family: var(--font-sans);
   font-weight: 400;
@@ -121,13 +123,14 @@
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--ink);
+  text-decoration: none;
   position: relative;
   padding-bottom: 4px;
   align-self: flex-start;
-  cursor: default;
+  transition: color 0.4s ease;
 }
 
-.offering-cta::after {
+.offering-cta::before {
   content: '';
   position: absolute;
   left: 0;
@@ -135,8 +138,22 @@
   width: 100%;
   height: 1px;
   background: var(--ink);
-  opacity: 0.4;
+  opacity: 0.3;
 }
+
+.offering-cta::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.4s ease;
+}
+
+.offering-cta:hover { color: var(--accent); }
+.offering-cta:hover::after { width: 100%; }
 
 /* Responsive */
 @media (max-width: 1024px) {
