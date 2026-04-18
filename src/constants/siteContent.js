@@ -44,8 +44,8 @@ export const ABOUT_ME = {
     'Breath before posture,',
     'stillness before strength.',
   ],
-  imageUrl: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80',
-  imageAlt: 'Meditation at sunrise',
+  imageUrl: '/images/sukhasana-silhouette.jpg',
+  imageAlt: 'Sukhasana silhouette meditation pose',
   imageCaption: 'In stillness, clarity\u2026',
   bodyLabel: 'About the Practice',
   bodyParagraphs: [
