@@ -102,7 +102,7 @@ export const CLOSING = {
     { label: 'Email', url: 'mailto:haylorjulian@gmail.com' },
   ],
   alliance: {
-    imageUrl: '/images/yogaAlliance.jpg',
+    imageUrl: '/images/yogaAllianceTransparent.png',
     imageAlt: 'Yoga Alliance E-RYT 200 and RYS 200 certifications',
   },
 };
