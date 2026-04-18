@@ -25,43 +25,46 @@ function AboutMe() {
         <span className="about-meta about-meta-right">{ABOUT_ME.topRight}</span>
       </div>
 
-      {/* Centred editorial heading */}
-      <h2
-        ref={heading.ref}
-        className={`about-heading ${heading.className}`}
-      >
-        {ABOUT_ME.heading}
-      </h2>
+      {/* Heading and image container — allows proper overlap positioning */}
+      <div className="about-heading-hero-wrapper">
+        {/* Centred editorial heading */}
+        <h2
+          ref={heading.ref}
+          className={`about-heading ${heading.className}`}
+        >
+          {ABOUT_ME.heading}
+        </h2>
 
-      {/* Photograph with left and right flanking text */}
-      <div
-        ref={imageArea.ref}
-        className={`about-hero ${imageArea.className}`}
-      >
-        <div className="about-flank about-flank-left">
-          {ABOUT_ME.flankLeft.map((line, i) => (
-            <span key={i}>
-              {line}
-              <br />
-            </span>
-          ))}
-        </div>
+        {/* Photograph with left and right flanking text */}
+        <div
+          ref={imageArea.ref}
+          className={`about-hero ${imageArea.className}`}
+        >
+          <div className="about-flank about-flank-left">
+            {ABOUT_ME.flankLeft.map((line, i) => (
+              <span key={i}>
+                {line}
+                <br />
+              </span>
+            ))}
+          </div>
 
-        <div className="about-image">
-          <img
-            src={ABOUT_ME.imageUrl}
-            alt={ABOUT_ME.imageAlt}
-            loading="lazy"
-          />
-        </div>
+          <div className="about-image">
+            <img
+              src={ABOUT_ME.imageUrl}
+              alt={ABOUT_ME.imageAlt}
+              loading="lazy"
+            />
+          </div>
 
-        <div className="about-flank about-flank-right">
-          {ABOUT_ME.flankRight.map((line, i) => (
-            <span key={i}>
-              {line}
-              <br />
-            </span>
-          ))}
+          <div className="about-flank about-flank-right">
+            {ABOUT_ME.flankRight.map((line, i) => (
+              <span key={i}>
+                {line}
+                <br />
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
