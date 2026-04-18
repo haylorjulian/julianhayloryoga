@@ -34,7 +34,7 @@
 
 .closing-translation {
   font-weight: 300;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--muted);
@@ -50,7 +50,7 @@
 }
 
 .closing-title {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--muted);
@@ -65,7 +65,7 @@
 
 .social-link {
   font-weight: 300;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--muted);

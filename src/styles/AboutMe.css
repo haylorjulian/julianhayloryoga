@@ -36,7 +36,7 @@
 .about-meta {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--muted);
@@ -46,7 +46,10 @@
 .about-meta-left  { text-align: left; }
 .about-meta-right { text-align: right; }
 
-/* Large editorial heading — split by image top edge via negative margin */
+/* Large editorial heading — sits on top of the image, overlapping the top
+   third with its baseline resting inside the photograph. z-index keeps the
+   name visually in front; negative bottom margin pulls the hero up so the
+   text and image share the same vertical space. */
 .about-heading {
   font-family: var(--font-serif);
   font-weight: 400;
@@ -55,11 +58,12 @@
   letter-spacing: -0.02em;
   color: var(--ink);
   text-transform: uppercase;
-  margin: 0 0 -2.4em 0;
+  margin: 0 0 -0.55em 0;
   text-align: center;
   position: relative;
   z-index: 3;
   width: 100%;
+  pointer-events: none;
 }
 
 /* Hero row: flank text, image, flank text
@@ -81,7 +85,7 @@
 .about-flank {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.55rem;
+  font-size: 0.65rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
@@ -113,7 +117,7 @@
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 300;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--muted);
   margin: 0.75rem 0 2rem;
   text-align: center;
@@ -131,7 +135,7 @@
 .about-body-label {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--muted);
@@ -141,7 +145,7 @@
 .about-body-paragraph {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   line-height: 1.7;
   color: var(--ink);
   margin-bottom: 0.75rem;
@@ -173,7 +177,7 @@
 
   .about-heading {
     font-size: clamp(2.2rem, 10vw, 3.5rem);
-    margin-bottom: -1em;
+    margin-bottom: -0.4em;
   }
 
   .about-image {

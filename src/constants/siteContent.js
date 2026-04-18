@@ -49,8 +49,8 @@ export const ABOUT_ME = {
   imageCaption: 'In stillness, clarity\u2026',
   bodyLabel: 'About the Practice',
   bodyParagraphs: [
-    'In a world where yoga has become synonymous with exercise, I invite you to step back \u2014 to rediscover the practice as it was intended. My teaching is rooted in the Sivananda tradition, honouring the classical approach to hatha yoga passed down through generations.',
-    'This is yoga that asks you to slow down. To feel the breath before the posture. Each class is guided by the five principles of hatha yoga \u2014 a framework not for the body alone, but for a more conscious way of living.',
+    'Trained in the classical hatha tradition at Sampoorna School of Yoga in India. The classes I teach are Sivananda-inspired, with a particular focus on alignment and attention to the self.',
+    'The approach is traditional \u2014 core postures held for longer, each one guided by the breath. The aim is simple: to leave class feeling clear-headed, relaxed, and focused.',
   ],
 };
 
@@ -69,7 +69,7 @@ export const WHAT_I_OFFER = {
       date: 'One-to-One',
       imageUrl: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&q=80',
       imageAlt: 'Private yoga session',
-      description: 'Guidance tailored to your body, breath, and intention. For beginners or those seeking a deeper, personal exploration.',
+      description: 'Held across most of central London, hosted from the comfort of your own home. Sessions are fully personalised to your preferences and ability \u2014 a space to refine alignment and learn to adjust yourself with awareness.',
       subject: 'Enquiry \u2014 Private Session',
     },
     {
@@ -77,16 +77,16 @@ export const WHAT_I_OFFER = {
       date: 'The Practice',
       imageUrl: 'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80',
       imageAlt: 'Group yoga practice',
-      description: 'Traditional Sivananda sequences in small, intimate settings. Mantra, prāṇāyāma, sun salutations, and deep relaxation.',
+      description: 'Also available across most of London, hosted from your home. Practise alongside friends or family in a traditional, carefully paced sequence.',
       subject: 'Enquiry \u2014 Group Classes',
     },
     {
       label: '/ Immersive',
-      date: 'Workshops',
+      date: 'Retreats & Workshops',
       imageUrl: 'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=600&q=80',
       imageAlt: 'Yoga retreat setting',
-      description: 'Extended sessions on yogic philosophy, breathing, and meditation. Step away from the noise and reconnect with what matters.',
-      subject: 'Enquiry \u2014 Workshops & Retreats',
+      description: 'Details shared in person. Extended time away from the everyday \u2014 a chance to deepen the practice with longer holds, breathwork, and quiet reflection.',
+      subject: 'Enquiry \u2014 Retreats & Workshops',
     },
   ],
 };
