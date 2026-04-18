@@ -132,6 +132,7 @@ a {
   opacity: 0.07;
   pointer-events: none;
   animation: slowSpin 120s linear infinite;
+  z-index: 1;
 }
 
 .mandala-global svg {
