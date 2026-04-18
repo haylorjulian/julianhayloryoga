@@ -36,7 +36,7 @@
 .about-meta-left  { text-align: left; }
 .about-meta-right { text-align: right; }
 
-/* Large editorial heading — overlaps the top of the photograph below */
+/* Large editorial heading */
 .about-heading {
   font-family: var(--font-serif);
   font-weight: 400;
@@ -44,7 +44,7 @@
   line-height: 0.95;
   letter-spacing: -0.02em;
   color: var(--ink);
-  margin: 0 0 -1.5em;
+  margin: 0 0 1.5rem;
   text-align: center;
   position: relative;
   z-index: 1;
