@@ -1,21 +1,16 @@
 import { LANDING } from '../constants/siteContent';
-import Mandala from './Mandala';
 import RichText from './RichText';
 import '../styles/Landing.css';
 
 /**
  * Landing
- * Full-viewport opening section. Features a slowly rotating mandala
- * background, a thin animated ornament, a serif headline with italic
- * emphasis, subtitle, breathing italic line, and a scroll hint.
+ * Full-viewport opening section. Features a thin animated ornament,
+ * a serif headline with italic emphasis, subtitle, breathing italic line,
+ * and a scroll hint. The mandala background is rendered globally at the App level.
  */
 function Landing() {
   return (
     <section className="landing">
-      <div className="mandala" aria-hidden="true">
-        <Mandala />
-      </div>
-
       <div className="landing-ornament" aria-hidden="true" />
 
       <h1 className="landing-title">
