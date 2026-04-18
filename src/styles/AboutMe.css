@@ -36,7 +36,7 @@
 .about-meta-left  { text-align: left; }
 .about-meta-right { text-align: right; }
 
-/* Large editorial heading */
+/* Large editorial heading — overlaps the photograph with higher z-index so text sits on top */
 .about-heading {
   font-family: var(--font-serif);
   font-weight: 400;
@@ -44,10 +44,10 @@
   line-height: 0.95;
   letter-spacing: -0.02em;
   color: var(--ink);
-  margin: 0 0 1.5rem;
+  margin: 0 0 -1.5em;
   text-align: center;
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 /* Hero row: flank text, image, flank text
