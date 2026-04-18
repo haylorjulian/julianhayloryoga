@@ -1,42 +1,67 @@
 import { CLOSING } from '../constants/siteContent';
+import useReveal from '../hooks/useReveal';
 import '../styles/Closing.css';
 
+/**
+ * Closing
+ * Final section — Sanskrit mantra, translation, name, title,
+ * and social links. Content fades in on scroll.
+ */
 function Closing() {
-  const currentYear = new Date().getFullYear();
-  const footerText = CLOSING.footer.replace('{year}', currentYear);
+  const sanskrit = useReveal();
+  const translation = useReveal();
+  const name = useReveal();
+  const title = useReveal();
+  const socials = useReveal();
 
   return (
     <section className="closing">
-      <div className="closing__content">
-        <p className="closing__statement">{CLOSING.statement}</p>
-
-        <div className="closing__rule" aria-hidden="true" />
-
-        <span className="closing__name">{CLOSING.name}</span>
-        <span className="closing__tagline">{CLOSING.tagline}</span>
-
-        <div className="closing__socials">
-          <a
-            href={CLOSING.socials.instagram.url}
-            className="closing__link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {CLOSING.socials.instagram.handle}
-          </a>
-          <span className="closing__dot" aria-hidden="true">&middot;</span>
-          <a
-            href={CLOSING.socials.email.url}
-            className="closing__link"
-          >
-            {CLOSING.socials.email.address}
-          </a>
-        </div>
+      <div
+        ref={sanskrit.ref}
+        className={`closing-sanskrit ${sanskrit.className}`}
+      >
+        {CLOSING.sanskrit}
       </div>
 
-      <footer className="closing__footer">
-        <span>{footerText}</span>
-      </footer>
+      <div
+        ref={translation.ref}
+        className={`closing-translation ${translation.className}`}
+      >
+        {CLOSING.translation}
+      </div>
+
+      <div
+        ref={name.ref}
+        className={`closing-name ${name.className}`}
+      >
+        {CLOSING.name}
+      </div>
+
+      <div
+        ref={title.ref}
+        className={`closing-title ${title.className}`}
+      >
+        {CLOSING.title}
+      </div>
+
+      <div
+        ref={socials.ref}
+        className={`socials ${socials.className}`}
+      >
+        {CLOSING.socials.map((social, i) => (
+          <a
+            key={i}
+            href={social.url}
+            className="social-link"
+            target={social.url.startsWith('http') ? '_blank' : undefined}
+            rel={social.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+          >
+            {social.label}
+          </a>
+        ))}
+      </div>
+
+      <div className="closing-footer">{CLOSING.footer}</div>
     </section>
   );
 }

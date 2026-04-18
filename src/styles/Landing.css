@@ -1,83 +1,80 @@
+/* ═══════════════════════════════════════════════════════
+   SECTION 1: LANDING
+═══════════════════════════════════════════════════════ */
+
 .landing {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  background-color: var(--color-cream);
-  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
 }
 
-/* Vertical breath line — a subtle animated element */
-.landing__breath-line {
-  position: absolute;
-  left: 50%;
-  top: 10%;
+/* Thin vertical ornament line at the top */
+.landing-ornament {
   width: 1px;
-  height: 0;
-  background-color: var(--color-charcoal);
-  opacity: 0.15;
-  animation: breathe 6s ease-in-out infinite;
+  height: 80px;
+  background: var(--accent);
+  opacity: 0.4;
+  margin-bottom: 3rem;
+  animation: drawDown 1.5s ease-out forwards;
+}
+
+@keyframes drawDown {
+  from { height: 0; opacity: 0; }
+  to   { height: 80px; opacity: 0.4; }
+}
+
+.landing-title {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 1.2s ease-out 0.3s both;
+}
+
+.landing-title em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent);
+}
+
+.landing-sub {
+  font-weight: 300;
+  font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 3rem;
+  animation: fadeUp 1.2s ease-out 0.6s both;
+}
+
+.landing-breath {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  color: var(--accent);
+  opacity: 0;
+  animation:
+    breathe 6s ease-in-out 1.5s infinite,
+    fadeUp 1.2s ease-out 1s both;
 }
 
 @keyframes breathe {
-  0%   { height: 0; top: 50%; opacity: 0; }
-  50%  { height: 20vh; top: 40%; opacity: 0.15; }
-  100% { height: 0; top: 50%; opacity: 0; }
+  0%, 100% { opacity: 0.4; }
+  50%      { opacity: 1; }
 }
 
-.landing__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0;
-  z-index: 1;
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.landing__epigraph {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  margin-bottom: 2.5rem;
-}
-
-.landing__name {
-  font-family: var(--font-heading);
-  font-size: clamp(3rem, 8vw, 7rem);
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  line-height: 1;
-  color: var(--color-charcoal);
-  margin: 0;
-}
-
-.landing__tagline {
-  font-family: var(--font-heading);
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--color-muted);
-  margin-top: 0.75rem;
-  letter-spacing: 0.05em;
-}
-
-.landing__subtitle {
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--color-muted);
-  margin-top: 3rem;
-  max-width: 30ch;
-  line-height: 1.8;
-}
-
-/* Scroll hint at bottom */
-.landing__scroll-hint {
+/* Scroll hint at the bottom */
+.scroll-hint {
   position: absolute;
   bottom: 3rem;
   left: 50%;
@@ -85,26 +82,62 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
+  animation: fadeUp 1.2s ease-out 2s both;
 }
 
-.landing__scroll-text {
-  font-family: var(--font-body);
+.scroll-hint span {
   font-size: 0.65rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--muted);
 }
 
-.landing__scroll-line {
+.scroll-line {
   width: 1px;
-  height: 40px;
-  background: linear-gradient(to bottom, var(--color-charcoal), transparent);
-  opacity: 0.3;
-  animation: scrollPulse 2s ease-in-out infinite;
+  height: 30px;
+  position: relative;
+  overflow: hidden;
 }
 
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.1; }
-  50% { opacity: 0.4; }
+.scroll-line::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 1px;
+  height: 30px;
+  background: var(--accent);
+  animation: scrollDown 2s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+  0%   { top: -30px; }
+  100% { top: 30px; }
+}
+
+/* Mandala decorative background */
+.mandala {
+  position: absolute;
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.mandala svg {
+  width: 100%;
+  height: 100%;
+}
+
+.landing .mandala {
+  width: clamp(440px, 55vw, 770px);
+  height: clamp(440px, 55vw, 770px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: slowSpin 120s linear infinite;
+}
+
+@keyframes slowSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
 }
