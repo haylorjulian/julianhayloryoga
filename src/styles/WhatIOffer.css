@@ -31,6 +31,21 @@
   margin: 0;
 }
 
+/* Intro paragraph below the title — sets the philosophy / USP for the
+   section. Italic serif for editorial warmth, kept narrow to feel like
+   pull-quote copy beside the cards. */
+.offerings-intro {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--ink);
+  opacity: 0.85;
+  margin: 1.5rem 0 0;
+  max-width: 28ch;
+}
+
 .offerings-meta-list {
   list-style: none;
   margin-top: auto;
@@ -112,6 +127,74 @@
   color: var(--ink);
   opacity: 0.75;
   margin-bottom: 0.75rem;
+}
+
+/* ─── Pricing block ─────────────────────────────────────
+   Sits between the description and the booking CTA.
+   Hairline rules above and below echo the editorial style
+   without introducing new colour or background. */
+.offering-pricing {
+  margin: 0.5rem 0 1rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--warm);
+  border-bottom: 1px solid var(--warm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.offering-pricing-heading {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.offering-pricing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.offering-pricing-label {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin: 0;
+  text-transform: none;
+}
+
+.offering-pricing-price {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--ink);
+  margin: 0;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* Bespoke pricing note — shown when the offering doesn't list tiers
+   (e.g. retreats). Same hairline frame as the structured pricing block,
+   kept short and italic. */
+.offering-pricing-note {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.95rem;
+  color: var(--ink);
+  opacity: 0.75;
+  margin: 0.5rem 0 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--warm);
+  border-bottom: 1px solid var(--warm);
+  text-align: center;
 }
 
 /* Booking link — hover behaviour matches the social links in the closing

@@ -9,7 +9,7 @@
  */
 
 export const SITE_META = {
-  title: 'Julian Haylor \u2014 Hatha Yoga',
+  title: 'Julian Haylor — Hatha Yoga',
   description: 'Returning to the roots of hatha yoga. Bringing eastern principles to western practices.',
 };
 
@@ -22,15 +22,15 @@ export const LANDING = {
     ['Returning to'],
     ['the ', { em: 'Roots' }],
   ],
-  subtitle: 'Traditional Hatha Yoga \u00b7 Sivananda Lineage',
+  subtitle: 'Traditional Hatha Yoga · Sivananda Lineage',
   breath: 'Breathe in stillness',
   scroll: 'Scroll',
 };
 
 // ─── SECTION 2: ABOUT ME ───
 export const ABOUT_ME = {
-  topLeft: 'Hatha Yoga \u00b7 Sivananda Tradition',
-  topRight: 'Portfolio \u00b7 2026',
+  topLeft: 'Hatha Yoga · Sivananda Tradition',
+  topRight: 'Portfolio · 2026',
   heading: 'Julian Haylor',
   flankLeft: [
     'Teaching in the',
@@ -44,59 +44,76 @@ export const ABOUT_ME = {
     'Breath before posture,',
     'stillness before strength.',
   ],
-  imageUrl: '/images/sukhasana-silhouette.jpg',
-  imageAlt: 'Sukhasana silhouette meditation pose',
-  imageCaption: 'In stillness, clarity\u2026',
+  imageUrl: '/images/sukhasana.png',
+  imageAlt: 'Julian Haylor seated in sukhasana',
+  imageCaption: 'In stillness, clarity…',
   bodyLabel: 'About the Practice',
   bodyParagraphs: [
-    'Trained in the classical hatha tradition at Sampoorna School of Yoga in India. The classes I teach are Sivananda-inspired, with a particular focus on alignment and attention to the self.',
-    'The approach is traditional \u2014 core postures held for longer, each one guided by the breath. The aim is simple: to leave class feeling clear-headed, relaxed, and focused.',
+    'My way into yoga began in pain — chronic neck tension, nerve damage, and the kind of stress that takes up residence in the body. Relief first arrived on an Iyengar mat over a decade ago, and what started as a search for comfort slowly turned into a practice I couldn’t step away from.',
+    'I went on to train in hatha at Sampoorna School of Yoga in India, with a particular pull towards the traditional, Sivananda-inspired style. The classes I teach today carry that lineage — slower, alignment-led, breath at the centre. The intention is simple: to leave clearer in the head, softer in the body, and a little more at home in yourself.',
   ],
 };
 
 // ─── SECTION 3: WHAT I OFFER ───
 // The CTA on each card opens the user's email client, pre-addressed
-// to the bookingEmail below.
+// to the bookingEmail below. Each card may include a `pricing` array
+// of { label, price } tiers, and an optional `pricingNote` shown when
+// the offering is bespoke (e.g. retreats).
 export const WHAT_I_OFFER = {
   heading: 'Offerings',
   sectionLabel: 'Journal of Practice',
+  intro: 'Anatomy-led, built around the individual. Postures are modified to keep you safe and out of injury, while the breath is used to coax the parasympathetic nervous system into rest. Yoga is an abundant toolkit — my role is to handpick what suits the body in front of me.',
   leftMeta: ['Private', 'Group', 'Immersive'],
   bookingEmail: 'haylorjulian@gmail.com',
   ctaLabel: '/ Book',
+  pricingLabel: 'Pricing',
   items: [
     {
       label: '/ Private',
       date: 'One-to-One',
-      imageUrl: 'https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&q=80',
-      imageAlt: 'Private yoga session',
-      description: 'Held across most of central London, hosted from the comfort of your own home. Sessions are fully personalised to your preferences and ability \u2014 a space to refine alignment and learn to adjust yourself with awareness.',
-      subject: 'Enquiry \u2014 Private Session',
+      imageUrl: '/images/prayerhands.png',
+      imageAlt: 'Hands in añjali mudra during private practice',
+      description: 'One-to-one sessions across central London, hosted in the comfort of your own home. Fully personalised — built around your body, your goals, and any injuries or restrictions we need to work around. A space to refine alignment, learn to self-adjust, and develop a practice you can carry into your own time.',
+      pricing: [
+        { label: 'Intro session', price: '£50' },
+        { label: 'Single session', price: '£95' },
+        { label: 'Pack of 5', price: '£425 · £85 each' },
+        { label: 'Pack of 10', price: '£700 · £70 each' },
+      ],
+      subject: 'Enquiry — Private Session',
     },
     {
       label: '/ Group',
-      date: 'The Practice',
-      imageUrl: 'https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=600&q=80',
-      imageAlt: 'Group yoga practice',
-      description: 'Also available across most of London, hosted from your home. Practise alongside friends or family in a traditional, carefully paced sequence.',
-      subject: 'Enquiry \u2014 Group Classes',
+      date: 'Small Groups',
+      imageUrl: '/images/headshot.png',
+      imageAlt: 'Julian Haylor portrait',
+      description: 'Hosted from your home, available across most of London. Practise alongside friends, family, or colleagues — the same individual care as a private session, scaled to a small shared space and split across the group.',
+      pricing: [
+        { label: '2 people', price: '£50 each' },
+        { label: '3 people', price: '£40 each' },
+        { label: '4 – 6 people', price: '£30 each' },
+      ],
+      subject: 'Enquiry — Group Classes',
     },
     {
       label: '/ Immersive',
       date: 'Retreats & Workshops',
-      imageUrl: 'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?w=600&q=80',
-      imageAlt: 'Yoga retreat setting',
-      description: 'Details shared in person. Extended time away from the everyday \u2014 a chance to deepen the practice with longer holds, breathwork, and quiet reflection.',
-      subject: 'Enquiry \u2014 Retreats & Workshops',
+      imageUrl: '/images/immersion.png',
+      imageAlt: 'Yoga immersion setting',
+      description: 'Longer-form gatherings — a chance to step away from the everyday and spend real time with the practice. Extended holds, breathwork, philosophy, and the kind of stillness that only arrives with space. Dates and details shared on enquiry.',
+      pricing: [],
+      pricingNote: 'Bespoke · on enquiry',
+      subject: 'Enquiry — Retreats & Workshops',
     },
   ],
 };
 
 // ─── SECTION 4: CLOSING ───
 export const CLOSING = {
-  sanskrit: '\u0965 \u0932\u094b\u0915\u093e\u0903 \u0938\u092e\u0938\u094d\u0924\u093e\u0903 \u0938\u0941\u0916\u093f\u0928\u094b \u092d\u0935\u0928\u094d\u0924\u0941 \u0965',
+  sanskrit: '॥ लोकाः समस्ताः सुखिनो भवन्तु ॥',
   translation: 'May all beings everywhere be happy and free',
   name: 'Julian Haylor',
-  title: 'Hatha Yoga Teacher \u00b7 Sivananda Tradition',
+  title: 'Hatha Yoga Teacher · Sivananda Tradition',
   socials: [
     { label: 'Instagram', url: 'https://instagram.com/julianhayloryoga' },
     { label: 'Email', url: 'mailto:haylorjulian@gmail.com' },

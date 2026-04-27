@@ -24,7 +24,7 @@ function WhatIOfferSection() {
 
   return (
     <section className="offerings">
-      {/* Left column — heading + vertical meta list */}
+      {/* Left column — heading, intro, and vertical meta list */}
       <aside className="offerings-left">
         <h2
           ref={title.ref}
@@ -32,6 +32,9 @@ function WhatIOfferSection() {
         >
           {WHAT_I_OFFER.heading}
         </h2>
+        {WHAT_I_OFFER.intro && (
+          <p className="offerings-intro">{WHAT_I_OFFER.intro}</p>
+        )}
         <ul className="offerings-meta-list">
           {WHAT_I_OFFER.leftMeta.map((item, i) => (
             <li key={i} className="offerings-meta-item">{item}</li>
@@ -52,6 +55,27 @@ function WhatIOfferSection() {
               <img src={item.imageUrl} alt={item.imageAlt} loading="lazy" />
             </div>
             <p className="offering-description">{item.description}</p>
+
+            {item.pricing && item.pricing.length > 0 && (
+              <dl className="offering-pricing">
+                {WHAT_I_OFFER.pricingLabel && (
+                  <dt className="offering-pricing-heading">
+                    {WHAT_I_OFFER.pricingLabel}
+                  </dt>
+                )}
+                {item.pricing.map((tier, t) => (
+                  <div key={t} className="offering-pricing-row">
+                    <dt className="offering-pricing-label">{tier.label}</dt>
+                    <dd className="offering-pricing-price">{tier.price}</dd>
+                  </div>
+                ))}
+              </dl>
+            )}
+
+            {item.pricingNote && (!item.pricing || item.pricing.length === 0) && (
+              <p className="offering-pricing-note">{item.pricingNote}</p>
+            )}
+
             <a
               href={buildBookingHref(item.subject)}
               className="offering-cta"
