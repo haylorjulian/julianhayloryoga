@@ -77,8 +77,8 @@ export const WHAT_I_OFFER = {
       pricing: [
         { label: 'Intro session', price: '£50' },
         { label: 'Single session', price: '£95' },
-        { label: 'Pack of 5', price: '£425 · £85 each' },
-        { label: 'Pack of 10', price: '£700 · £70 each' },
+        { label: 'Pack of 5', price: '£425' },
+        { label: 'Pack of 10', price: '£700' },
       ],
       subject: 'Enquiry — Private Session',
     },

@@ -123,9 +123,11 @@
   text-align: center;
 }
 
-/* Body text block */
+/* Body text block — wider line length so the bio sits across the page
+   horizontally and takes less vertical space. Kept narrower than the
+   hero row above so it still reads as centred editorial copy. */
 .about-body {
-  max-width: 540px;
+  max-width: 820px;
   text-align: center;
   display: flex;
   flex-direction: column;

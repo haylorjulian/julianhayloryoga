@@ -54,7 +54,6 @@ function WhatIOfferSection() {
             <div className="offering-image">
               <img src={item.imageUrl} alt={item.imageAlt} loading="lazy" />
             </div>
-            <p className="offering-description">{item.description}</p>
 
             {item.pricing && item.pricing.length > 0 && (
               <dl className="offering-pricing">

@@ -63,13 +63,16 @@
   color: var(--muted);
 }
 
-/* Right column — three offering cards */
+/* Right column — three offering cards.
+   align-items: flex-start ensures all card tops (and therefore all images)
+   sit on the same baseline, matching the WhatIOffer reference. Pricing
+   blocks of varying length are allowed to extend downward beneath. */
 .offerings-grid {
   flex: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .offering-card {
@@ -182,7 +185,7 @@
 
 /* Bespoke pricing note — shown when the offering doesn't list tiers
    (e.g. retreats). Same hairline frame as the structured pricing block,
-   kept short and italic. */
+   left-aligned to match the label column of the other cards. */
 .offering-pricing-note {
   font-family: var(--font-serif);
   font-style: italic;
@@ -194,7 +197,7 @@
   padding: 1rem 0;
   border-top: 1px solid var(--warm);
   border-bottom: 1px solid var(--warm);
-  text-align: center;
+  text-align: left;
 }
 
 /* Booking link — hover behaviour matches the social links in the closing
