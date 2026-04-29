@@ -109,9 +109,8 @@
   margin-bottom: 0.5rem;
 }
 
-/* Image sized to match the reference proportions — roughly a third of
-   the card width, square. max-width keeps it from growing too large on
-   wide viewports. */
+/* Image fills the card width as a square — proportions match the
+   WhatIOffer reference. */
 .offering-image {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -233,11 +232,10 @@
   line-height: 1.4;
 }
 
-/* Booking link — pinned to the bottom of every card via margin-top: auto.
-   With the matching auto on .offering-label above, free space splits
-   between the top of the card and the gap above the CTA, which keeps
-   the visible content centred mid-card and aligns the CTAs across all
-   three cards regardless of pricing-block height.
+/* Booking link — sits in the natural flow at the bottom of the card.
+   CTA alignment across the three cards is now handled by the fixed
+   .offering-pricing height (135px), which keeps every card the same
+   shape regardless of how many pricing tiers it contains.
    Hover behaviour matches the social links in the closing section. */
 .offering-cta {
   font-family: var(--font-sans);
