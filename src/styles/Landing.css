@@ -56,6 +56,11 @@
   animation: fadeUp 1.2s ease-out 0.6s both;
 }
 
+/* Subtitle inline parts — separator visible on desktop, hidden on mobile.
+   Each part becomes its own line on mobile (see media query below). */
+.landing-sub-part { display: inline; }
+.landing-sub-sep  { display: inline; }
+
 .landing-breath {
   font-family: var(--font-serif);
   font-style: italic;
@@ -121,5 +126,12 @@
 @keyframes scrollDown {
   0%   { top: -30px; }
   100% { top: 30px; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  /* Subtitle wraps onto two lines: hide separator, stack parts */
+  .landing-sub-part { display: block; }
+  .landing-sub-sep  { display: none; }
 }
 

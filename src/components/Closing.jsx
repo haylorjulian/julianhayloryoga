@@ -41,7 +41,9 @@ function Closing() {
         ref={title.ref}
         className={`closing-title ${title.className}`}
       >
-        {CLOSING.title}
+        <span className="closing-title-part">{CLOSING.titleParts[0]}</span>
+        <span className="closing-title-sep" aria-hidden="true"> · </span>
+        <span className="closing-title-part">{CLOSING.titleParts[1]}</span>
       </div>
 
       <div

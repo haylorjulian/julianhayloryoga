@@ -57,6 +57,11 @@
   margin-bottom: 3rem;
 }
 
+/* Title inline parts — separator visible on desktop, hidden on mobile.
+   Each part becomes its own line on mobile (see media query below). */
+.closing-title-part { display: inline; }
+.closing-title-sep  { display: inline; }
+
 .socials {
   display: flex;
   gap: 2.5rem;
@@ -113,4 +118,8 @@
     flex-direction: column;
     gap: 1.2rem;
   }
+
+  /* Closing title wraps onto two lines: hide separator, stack parts */
+  .closing-title-part { display: block; }
+  .closing-title-sep  { display: none; }
 }

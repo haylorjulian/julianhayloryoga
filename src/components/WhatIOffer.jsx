@@ -55,24 +55,37 @@ function WhatIOfferSection() {
               <img src={item.imageUrl} alt={item.imageAlt} loading="lazy" />
             </div>
 
-            {item.pricing && item.pricing.length > 0 && (
+            {(
+              (item.pricing && item.pricing.length > 0) ||
+              item.pricingNote
+            ) && (
               <dl className="offering-pricing">
                 {WHAT_I_OFFER.pricingLabel && (
                   <dt className="offering-pricing-heading">
                     {WHAT_I_OFFER.pricingLabel}
                   </dt>
                 )}
-                {item.pricing.map((tier, t) => (
+
+                {item.durations && item.pricing && item.pricing.length > 0 && (
+                  <div className="offering-pricing-row offering-pricing-row-headers">
+                    <dt className="offering-pricing-label" aria-hidden="true" />
+                    <dd className="offering-pricing-price offering-pricing-durations">
+                      {item.durations}
+                    </dd>
+                  </div>
+                )}
+
+                {item.pricing && item.pricing.map((tier, t) => (
                   <div key={t} className="offering-pricing-row">
                     <dt className="offering-pricing-label">{tier.label}</dt>
                     <dd className="offering-pricing-price">{tier.price}</dd>
                   </div>
                 ))}
-              </dl>
-            )}
 
-            {item.pricingNote && (!item.pricing || item.pricing.length === 0) && (
-              <p className="offering-pricing-note">{item.pricingNote}</p>
+                {item.pricingNote && (!item.pricing || item.pricing.length === 0) && (
+                  <dd className="offering-pricing-note">{item.pricingNote}</dd>
+                )}
+              </dl>
             )}
 
             <a

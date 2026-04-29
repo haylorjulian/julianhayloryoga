@@ -17,12 +17,15 @@ export const SITE_META = {
 // titleLines is an array where each inner array represents a single line
 // of the headline. Inside a line you can mix strings and { em: "..." }
 // objects to mark italic emphasis.
+//
+// subtitleParts is an array of two strings rendered side-by-side on
+// desktop with a separator and stacked on two lines on mobile.
 export const LANDING = {
   titleLines: [
     ['Returning to'],
     ['the ', { em: 'Roots' }],
   ],
-  subtitle: 'Traditional Hatha Yoga · Sivananda Lineage',
+  subtitleParts: ['Traditional Hatha Yoga', 'Sivananda Lineage'],
   breath: 'Breathe in stillness',
   scroll: 'Scroll',
 };
@@ -74,11 +77,12 @@ export const WHAT_I_OFFER = {
       imageUrl: '/images/prayerhands.png',
       imageAlt: 'Hands in añjali mudra during private practice',
       description: 'One-to-one sessions across central London, hosted in the comfort of your own home. Fully personalised — built around your body, your goals, and any injuries or restrictions we need to work around. A space to refine alignment, learn to self-adjust, and develop a practice you can carry into your own time.',
+      durations: '1 hr / 1.5 hr',
       pricing: [
-        { label: 'Intro session', price: '£50' },
-        { label: 'Single session', price: '£95' },
-        { label: 'Pack of 5', price: '£425' },
-        { label: 'Pack of 10', price: '£700' },
+        { label: 'Intro session', price: '£50 / £75' },
+        { label: 'Single session', price: '£80 / £120' },
+        { label: 'Pack of 5', price: '£350 / £525' },
+        { label: 'Pack of 10', price: '£600 / £900' },
       ],
       subject: 'Enquiry — Private Session',
     },
@@ -88,10 +92,11 @@ export const WHAT_I_OFFER = {
       imageUrl: '/images/headshot.png',
       imageAlt: 'Julian Haylor portrait',
       description: 'Hosted from your home, available across most of London. Practise alongside friends, family, or colleagues — the same individual care as a private session, scaled to a small shared space and split across the group.',
+      durations: '1 hr / 1.5 hr',
       pricing: [
-        { label: '2 people', price: '£50 each' },
-        { label: '3 people', price: '£40 each' },
-        { label: '4 – 6 people', price: '£30 each' },
+        { label: '2 people', price: '£50 / £75 each' },
+        { label: '3 people', price: '£40 / £60 each' },
+        { label: '4 – 6 people', price: '£30 / £45 each' },
       ],
       subject: 'Enquiry — Group Classes',
     },
@@ -102,18 +107,20 @@ export const WHAT_I_OFFER = {
       imageAlt: 'Yoga immersion setting',
       description: 'Longer-form gatherings — a chance to step away from the everyday and spend real time with the practice. Extended holds, breathwork, philosophy, and the kind of stillness that only arrives with space. Dates and details shared on enquiry.',
       pricing: [],
-      pricingNote: 'Bespoke · on enquiry',
+      pricingNote: 'Bespoke — on enquiry',
       subject: 'Enquiry — Retreats & Workshops',
     },
   ],
 };
 
 // ─── SECTION 4: CLOSING ───
+// titleParts is an array of two strings rendered side-by-side on
+// desktop with a separator and stacked on two lines on mobile.
 export const CLOSING = {
   sanskrit: '॥ लोकाः समस्ताः सुखिनो भवन्तु ॥',
   translation: 'May all beings everywhere be happy and free',
   name: 'Julian Haylor',
-  title: 'Hatha Yoga Teacher · Sivananda Tradition',
+  titleParts: ['Hatha Yoga Teacher', 'Sivananda Tradition'],
   socials: [
     { label: 'Instagram', url: 'https://instagram.com/julianhayloryoga' },
     { label: 'Email', url: 'mailto:haylorjulian@gmail.com' },

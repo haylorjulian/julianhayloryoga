@@ -21,7 +21,11 @@ function Landing() {
         ))}
       </h1>
 
-      <p className="landing-sub">{LANDING.subtitle}</p>
+      <p className="landing-sub">
+        <span className="landing-sub-part">{LANDING.subtitleParts[0]}</span>
+        <span className="landing-sub-sep" aria-hidden="true"> · </span>
+        <span className="landing-sub-part">{LANDING.subtitleParts[1]}</span>
+      </p>
       <p className="landing-breath">{LANDING.breath}</p>
 
       <div className="scroll-hint" aria-hidden="true">

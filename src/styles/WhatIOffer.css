@@ -64,15 +64,18 @@
 }
 
 /* Right column — three offering cards.
-   align-items: flex-start ensures all card tops (and therefore all images)
-   sit on the same baseline, matching the WhatIOffer reference. Pricing
-   blocks of varying length are allowed to extend downward beneath. */
+   align-self: flex-end pushes the entire grid to the bottom of the
+   offerings section so the images sit in the lower portion of the
+   viewport, mirroring the WhatIOffer reference layout. Cards inside
+   the grid still align by their top edge so all three images share
+   the same baseline. */
 .offerings-grid {
   flex: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   align-items: flex-start;
+  align-self: flex-end;
 }
 
 .offering-card {
@@ -138,12 +141,12 @@
    without introducing new colour or background. */
 .offering-pricing {
   margin: 0.5rem 0 1rem;
-  padding: 0.85rem 0;
+  padding: 0.7rem 0;
   border-top: 1px solid var(--warm);
   border-bottom: 1px solid var(--warm);
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 0.2rem;
 }
 
 .offering-pricing-heading {
@@ -153,7 +156,23 @@
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.4rem;
+}
+
+/* Duration column header — shows '1 hr / 1.5 hr' aligned to the right
+   above the price column so the price-pair format is self-explanatory. */
+.offering-pricing-row-headers {
+  margin-bottom: 0.1rem;
+}
+
+.offering-pricing-durations {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-style: normal;
 }
 
 .offering-pricing-row {
@@ -183,20 +202,17 @@
   white-space: nowrap;
 }
 
-/* Bespoke pricing note — shown when the offering doesn't list tiers
-   (e.g. retreats). Same hairline frame as the structured pricing block,
-   left-aligned to match the label column of the other cards. */
+/* Bespoke pricing note — rendered inside the same .offering-pricing
+   frame as the tiered cards (e.g. for retreats). Sits beneath the
+   "Pricing" heading so all cards share the same opening frame. */
 .offering-pricing-note {
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
   font-size: 0.95rem;
   color: var(--ink);
-  opacity: 0.75;
-  margin: 0.5rem 0 1rem;
-  padding: 1rem 0;
-  border-top: 1px solid var(--warm);
-  border-bottom: 1px solid var(--warm);
+  opacity: 0.85;
+  margin: 0;
   text-align: left;
 }
 
@@ -260,14 +276,20 @@
     flex: 0 0 auto;
   }
 
+  /* Allow the intro paragraph to span the full mobile width */
+  .offerings-intro {
+    max-width: none;
+  }
+
+  /* Hide the vertical category meta list on mobile — the cards below
+     already communicate the categories by name. */
   .offerings-meta-list {
-    margin-top: 1.5rem;
-    flex-direction: row;
-    gap: 1.5rem;
+    display: none;
   }
 
   .offerings-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
+    align-self: stretch;
   }
 }
