@@ -249,6 +249,7 @@
   padding-bottom: 4px;
   align-self: flex-start;
   transition: color 0.4s ease;
+
 }
 
 .offering-cta::before {
@@ -296,7 +297,7 @@
   }
 
   .offering-pricing-note {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   /* Allow the intro paragraph to span the full mobile width */
@@ -323,11 +324,17 @@
     height: auto;
   }
 
+    .offering-card:last-of-type {
+      dl {
+        height: 60px;
+      }
+  }
+
   .offering-label {
     margin-top: 0;
   }
 
   .offering-cta {
-    margin-top: 1rem;
+    display: none;
   }
 }
