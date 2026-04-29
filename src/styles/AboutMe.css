@@ -53,7 +53,7 @@
 .about-heading {
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--ink);
@@ -127,7 +127,7 @@
    horizontally and takes less vertical space. Kept narrower than the
    hero row above so it still reads as centred editorial copy. */
 .about-body {
-  max-width: 820px;
+  max-width: 620px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -164,8 +164,12 @@
   }
 
   .about-meta-top {
-    top: 1rem;
-    padding: 0 1.5rem;
+      display: none;
+  }
+
+  .about-body {
+    text-align: left;
+    font-style: italic; 
   }
 
   .about-hero {
@@ -178,8 +182,8 @@
   }
 
   .about-heading {
-    font-size: clamp(2.2rem, 10vw, 3.5rem);
-    margin-bottom: -0.4em;
+    font-size: clamp(2.2rem, 12vw, 3.5rem);
+    margin-bottom: -0.55em;
   }
 
   .about-image {

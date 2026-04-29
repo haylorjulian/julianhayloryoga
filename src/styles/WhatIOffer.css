@@ -43,7 +43,7 @@
   color: var(--ink);
   opacity: 0.85;
   margin: 1.5rem 0 0;
-  max-width: 28ch;
+  max-width: 30ch;
 }
 
 .offerings-meta-list {
@@ -114,7 +114,6 @@
    wide viewports. */
 .offering-image {
   width: 100%;
-  max-width: 180px;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   background: var(--breath);
@@ -158,12 +157,14 @@
   flex-direction: column;
   gap: 0.12rem;
   line-height: 1.4;
+  height: 135px;
+  justify-content: space-between;
 }
 
 .offering-pricing-heading {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.5rem;
+  font-size: 0.6rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--muted);
@@ -198,7 +199,7 @@
 .offering-pricing-label {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   letter-spacing: 0.05em;
   color: var(--muted);
   margin: 0;
@@ -209,7 +210,7 @@
 .offering-pricing-price {
   font-family: var(--font-serif);
   font-weight: 500;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--ink);
   margin: 0;
   text-align: right;
@@ -249,7 +250,6 @@
   position: relative;
   padding-bottom: 4px;
   align-self: flex-start;
-  margin-top: auto;
   transition: color 0.4s ease;
 }
 
@@ -295,6 +295,10 @@
 
   .offerings-left {
     flex: 0 0 auto;
+  }
+
+  .offering-pricing-note {
+    font-size: 1.2rem;
   }
 
   /* Allow the intro paragraph to span the full mobile width */
