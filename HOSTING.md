@@ -42,21 +42,40 @@ the TLD (`.com`, `.co.uk`, `.yoga`, etc.).
 
 ### 1. Push the repo to GitHub
 
-If the project is not already on GitHub:
+GitHub account: **haylorjulian**
+Recommended repo name: **julianhayloryoga**
+Visibility: **public**
+
+Two ways to create the repo and push:
+
+**Option A — GitHub CLI (easiest)**
 
 ```bash
 # from inside the project folder
 gh auth login                    # one-time, follow prompts
-gh repo create julianhayloryoga --private --source=. --remote=origin
+gh repo create haylorjulian/julianhayloryoga --public --source=. --remote=origin
 git push -u origin master
 ```
 
-(If you do not use the GitHub CLI, create an empty repo on github.com,
-then run `git remote add origin <url>` and `git push -u origin master`.)
+**Option B — Web UI**
 
-### 2. Create a Cloudflare account
+1. Go to <https://github.com/new>.
+2. Owner: `haylorjulian`. Repository name: `julianhayloryoga`. Visibility: **Public**.
+3. **Do not** initialise with a README, .gitignore, or licence (the
+   project already has its own).
+4. Click **Create repository**.
+5. Back in your terminal:
 
-Sign up at <https://dash.cloudflare.com/sign-up>. The free plan is fine.
+   ```bash
+   git remote add origin https://github.com/haylorjulian/julianhayloryoga.git
+   git branch -M master         # confirm the branch name
+   git push -u origin master
+   ```
+
+### 2. Cloudflare account
+
+Already configured under **haylorjulian@gmail.com** — just sign in at
+<https://dash.cloudflare.com/>.
 
 ### 3. Connect the repo to Cloudflare Pages
 
@@ -78,16 +97,51 @@ Sign up at <https://dash.cloudflare.com/sign-up>. The free plan is fine.
    `https://julianhayloryoga.pages.dev` (Cloudflare picks the subdomain
    from the project name).
 
-### 4. (Optional) Add a custom domain
+### 4. (Later) Add a custom domain
 
-If you have a domain (e.g. `julianhayloryoga.com`):
+You do not have a domain yet — that is fine. The site will be live
+immediately at `https://julianhayloryoga.pages.dev` once Pages finishes
+its first build. You can add a custom domain at any point in the future
+without rebuilding the site.
 
-1. In the Pages project → **Custom domains → Set up a custom domain**.
-2. Enter the domain. Cloudflare will guide DNS setup.
-3. If the domain is registered with Cloudflare, it is one click. If
-   it is registered elsewhere, Cloudflare provides the CNAME record to
-   add at your registrar.
-4. SSL is provisioned automatically within minutes.
+When you are ready, see **Domain recommendations** below for naming and
+TLD ideas, then:
+
+1. Buy the domain — registering it at **Cloudflare Registrar**
+   (<https://dash.cloudflare.com/?to=/:account/registrar>) is the
+   simplest path because DNS, SSL, and the Pages link-up are all in one
+   account. Cloudflare sells domains at cost (no markup).
+2. In your Pages project → **Custom domains → Set up a custom domain**.
+3. Enter the domain. If it is registered with Cloudflare, it is one
+   click. If it is registered elsewhere, Cloudflare provides the CNAME
+   record you add at the registrar.
+4. SSL is provisioned automatically within a few minutes.
+
+#### Domain recommendations
+
+A few names worth checking, in rough order of how I would rank them
+for a yoga teacher's portfolio site:
+
+| Name | TLD options | Notes |
+|---|---|---|
+| `julianhaylor.com` | `.com`, `.co.uk` | Cleanest; works whether you stay in yoga or branch out later. Treat the site as your personal portfolio. |
+| `julianhayloryoga.com` | `.com`, `.co.uk` | Most descriptive; SEO-friendly for "Julian Haylor yoga". |
+| `julianhaylor.yoga` | `.yoga` | Memorable, on-theme, almost certainly available. ~£25/yr — pricier than `.com`. |
+| `haylor.yoga` | `.yoga` | Short and punchy. |
+| `practicewithjulian.com` | `.com`, `.co.uk` | Frames the site around the practice rather than the person. Stronger CTA feel. |
+
+Quick rules of thumb:
+
+- **`.com`** is most familiar and easiest to remember when said aloud
+  (which matters for word-of-mouth referrals). Aim for this if available.
+- **`.co.uk`** is fine as a fallback or for a UK-only audience.
+- **`.yoga`** is on-theme and almost always available, but more expensive
+  (~£20–£30/year vs ~£8–£12 for `.com`/`.co.uk`).
+- Avoid hyphens, numbers, and unusual TLDs (`.online`, `.life`, `.io`)
+  for a wellness brand — they read less trustworthy.
+
+To check availability: <https://www.cloudflare.com/products/registrar/>
+or any registrar of your choice.
 
 ---
 
@@ -143,9 +197,9 @@ The live site reverts instantly. No git changes required.
 | What | URL |
 |---|---|
 | Cloudflare dashboard | <https://dash.cloudflare.com/> |
-| Pages project (replace once created) | `https://dash.cloudflare.com/<account-id>/pages/view/julianhayloryoga` |
-| Live preview URL | `https://julianhayloryoga.pages.dev` |
-| GitHub repo (replace once created) | `https://github.com/<your-username>/julianhayloryoga` |
+| Cloudflare Registrar (for buying a domain later) | <https://dash.cloudflare.com/?to=/:account/registrar> |
+| GitHub repo | <https://github.com/haylorjulian/julianhayloryoga> *(after first push)* |
+| Live site (auto-assigned) | `https://julianhayloryoga.pages.dev` *(after first deploy)* |
 | Cloudflare Pages docs | <https://developers.cloudflare.com/pages/> |
 | Vite build docs | <https://vite.dev/guide/build.html> |
 
@@ -177,18 +231,15 @@ directory stays `dist`.
 
 ---
 
-## What I (Claude) need from you to complete setup
+## Project setup (already decided)
 
-Before the live site is reachable, please confirm in chat:
+| | |
+|---|---|
+| GitHub username | `haylorjulian` |
+| GitHub repo | `julianhayloryoga` (public) |
+| Cloudflare account | `haylorjulian@gmail.com` |
+| Custom domain | not yet — see "Domain recommendations" above |
+| Initial live URL | `https://julianhayloryoga.pages.dev` |
 
-1. **GitHub** — do you have a GitHub account? If yes, what username?
-   If no, would you like to use GitLab/Bitbucket instead, or would you
-   like a step-by-step on creating a GitHub account?
-2. **Repository visibility** — should the GitHub repo be **public** or
-   **private**? (Private is fine; Cloudflare can read both.)
-3. **Custom domain** — do you already own a domain you want to use
-   (e.g. `julianhayloryoga.com`)? If not, do you want a recommendation?
-4. **Cloudflare account** — do you already have one, or would you like
-   instructions to sign up?
-
-Once those are answered I can walk through the actual deployment.
+Once the repo is pushed and Pages is connected (steps 1 + 3 above), the
+site is live. Custom domain can be added at any time without re-deploying.
