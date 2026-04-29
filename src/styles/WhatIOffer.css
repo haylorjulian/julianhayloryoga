@@ -64,24 +64,26 @@
 }
 
 /* Right column — three offering cards.
-   align-self: flex-end pushes the entire grid to the bottom of the
-   offerings section so the images sit in the lower portion of the
-   viewport, mirroring the WhatIOffer reference layout. Cards inside
-   the grid still align by their top edge so all three images share
-   the same baseline. */
+   The grid stretches to the full section height. Each card uses two
+   `margin-top: auto` declarations (one on .offering-label, one on
+   .offering-cta) so the card content sits roughly mid-card and the
+   booking CTA is pinned to the bottom. With every card stretched to
+   the same height, all three CTAs end up vertically aligned and all
+   three images sit at the same halfway-down-the-viewport position —
+   matching the WhatIOffer reference. */
 .offerings-grid {
   flex: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  align-items: flex-start;
-  align-self: flex-end;
+  align-items: stretch;
 }
 
 .offering-card {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.35rem;
+  height: 100%;
 }
 
 .offering-label {
@@ -91,6 +93,10 @@
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--ink);
+  /* Pushes the card content (label, sublabel, image, pricing) down so
+     it sits in the middle of the card. Pairs with margin-top: auto on
+     the CTA so the booking link is pinned to the bottom. */
+  margin-top: auto;
 }
 
 .offering-sublabel {
@@ -103,12 +109,16 @@
   margin-bottom: 0.5rem;
 }
 
+/* Image sized to match the reference proportions — roughly a third of
+   the card width, square. max-width keeps it from growing too large on
+   wide viewports. */
 .offering-image {
   width: 100%;
+  max-width: 180px;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   background: var(--breath);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .offering-image img {
@@ -136,70 +146,75 @@
 }
 
 /* ─── Pricing block ─────────────────────────────────────
-   Sits between the description and the booking CTA.
-   Hairline rules above and below echo the editorial style
-   without introducing new colour or background. */
+   Sits beneath the image. Compact typography and tight spacing keep
+   the block small enough that the surrounding card content fits the
+   middle-of-the-section position from the WhatIOffer reference. */
 .offering-pricing {
-  margin: 0.5rem 0 1rem;
-  padding: 0.7rem 0;
+  margin: 0.4rem 0 0.75rem;
+  padding: 0.55rem 0;
   border-top: 1px solid var(--warm);
   border-bottom: 1px solid var(--warm);
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.12rem;
+  line-height: 1.4;
 }
 
 .offering-pricing-heading {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
 }
 
 /* Duration column header — shows '1 hr / 1.5 hr' aligned to the right
    above the price column so the price-pair format is self-explanatory. */
 .offering-pricing-row-headers {
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.05rem;
 }
 
 .offering-pricing-durations {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--muted);
   font-style: normal;
+  line-height: 1.4;
 }
 
 .offering-pricing-row {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .offering-pricing-label {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   letter-spacing: 0.05em;
   color: var(--muted);
   margin: 0;
   text-transform: none;
+  line-height: 1.4;
 }
 
 .offering-pricing-price {
   font-family: var(--font-serif);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.78rem;
   color: var(--ink);
   margin: 0;
   text-align: right;
   white-space: nowrap;
+  line-height: 1.4;
 }
 
 /* Bespoke pricing note — rendered inside the same .offering-pricing
@@ -209,15 +224,20 @@
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   color: var(--ink);
   opacity: 0.85;
   margin: 0;
   text-align: left;
+  line-height: 1.4;
 }
 
-/* Booking link — hover behaviour matches the social links in the closing
-   section: underline grows from left to right, colour shifts to accent. */
+/* Booking link — pinned to the bottom of every card via margin-top: auto.
+   With the matching auto on .offering-label above, free space splits
+   between the top of the card and the gap above the CTA, which keeps
+   the visible content centred mid-card and aligns the CTAs across all
+   three cards regardless of pricing-block height.
+   Hover behaviour matches the social links in the closing section. */
 .offering-cta {
   font-family: var(--font-sans);
   font-weight: 400;
@@ -229,6 +249,7 @@
   position: relative;
   padding-bottom: 4px;
   align-self: flex-start;
+  margin-top: auto;
   transition: color 0.4s ease;
 }
 
@@ -291,5 +312,20 @@
     grid-template-columns: 1fr;
     gap: 3rem;
     align-self: stretch;
+  }
+
+  /* Reset the auto-margin spacers on mobile — cards stack vertically
+     so there is no grid-row free space to absorb. Without these resets
+     the auto margins leave odd gaps on a single-column layout. */
+  .offering-card {
+    height: auto;
+  }
+
+  .offering-label {
+    margin-top: 0;
+  }
+
+  .offering-cta {
+    margin-top: 1rem;
   }
 }
