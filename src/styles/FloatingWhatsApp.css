@@ -1,0 +1,84 @@
+/* ═══════════════════════════════════════════════════════
+   FLOATING WHATSAPP BUTTON
+   Fixed to the bottom-right corner of the viewport on every device.
+   Themed in the site's paper / warm / ink / accent palette so it
+   reads as part of the editorial design rather than a bright green
+   third-party widget. z-index sits above sections but below any
+   modal-style overlays we might add later.
+═══════════════════════════════════════════════════════ */
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--warm);
+  box-shadow: 0 4px 16px rgba(42, 38, 34, 0.08);
+
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.floating-whatsapp:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 6px 22px rgba(139, 115, 85, 0.18);
+  transform: translateY(-2px);
+}
+
+.floating-whatsapp:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.floating-whatsapp:active {
+  transform: translateY(0);
+}
+
+.floating-whatsapp-icon {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+/* Mobile — slightly smaller and a touch tighter to the corner so it
+   doesn't crowd the closing alliance badge or scroll-snap edges. */
+@media (max-width: 768px) {
+  .floating-whatsapp {
+    width: 48px;
+    height: 48px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .floating-whatsapp-icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .floating-whatsapp,
+  .floating-whatsapp:hover,
+  .floating-whatsapp:active {
+    transition: none;
+    transform: none;
+  }
+}

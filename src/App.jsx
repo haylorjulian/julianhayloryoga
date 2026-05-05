@@ -4,6 +4,7 @@ import AboutMe from './components/AboutMe';
 import WhatIOffer from './components/WhatIOffer';
 import Closing from './components/Closing';
 import Mandala from './components/Mandala';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 import './styles/global.css';
 
 function App() {
@@ -46,6 +47,10 @@ function App() {
       <AboutMe />
       <WhatIOffer />
       <Closing />
+
+      {/* Persistent quick-contact button — visible on every section,
+          on every viewport size. */}
+      <FloatingWhatsApp />
     </main>
   );
 }

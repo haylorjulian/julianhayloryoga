@@ -13,6 +13,30 @@ export const SITE_META = {
   description: 'Returning to the roots of hatha yoga. Bringing eastern principles to western practices.',
 };
 
+// ─── WHATSAPP / TELEPHONE ───
+// Single source of truth for the phone number used by both the
+// floating WhatsApp button (bottom-right of every viewport) and the
+// "Telephone" social link in the closing section. Update phoneNumber
+// in E.164 format (no + sign or spaces) to change both at once.
+export const WHATSAPP = {
+  phoneNumber: '447512997002',
+  // Optional pre-filled greeting WhatsApp opens the chat with. Leave
+  // an empty string for no pre-fill.
+  prefilledMessage: '',
+  ariaLabel: 'Message Julian on WhatsApp',
+  floatingTooltip: 'Chat on WhatsApp',
+};
+
+// Builds the wa.me URL used by the floating button and the Telephone
+// social link. Optionally pass overrides for ad-hoc usage (e.g. a
+// per-card pre-filled enquiry message in the future).
+export const buildWhatsAppUrl = ({ phoneNumber, prefilledMessage } = {}) => {
+  const number = phoneNumber || WHATSAPP.phoneNumber;
+  const message = prefilledMessage ?? WHATSAPP.prefilledMessage;
+  const base = `https://wa.me/${number}`;
+  return message ? `${base}?text=${encodeURIComponent(message)}` : base;
+};
+
 // ─── SECTION 1: LANDING ───
 // titleLines is an array where each inner array represents a single line
 // of the headline. Inside a line you can mix strings and { em: "..." }
@@ -122,6 +146,7 @@ export const CLOSING = {
   socials: [
     { label: 'Instagram', url: 'https://instagram.com/julianhayloryoga' },
     { label: 'Email', url: 'mailto:haylorjulian@gmail.com' },
+    { label: 'Telephone', url: buildWhatsAppUrl() },
   ],
   alliance: {
     imageUrl: '/images/certificate.png',
