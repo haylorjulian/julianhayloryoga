@@ -49,24 +49,23 @@ export const LANDING = {
     ['Returning to'],
     ['the ', { em: 'Roots' }],
   ],
-  subtitleParts: ['Traditional Hatha Yoga', 'Sivananda Lineage'],
+  subtitleParts: ['Traditional Hatha Yoga', 'Sivananda Inspired'],
   breath: 'Breathe in stillness',
   scroll: 'Scroll',
 };
 
 // ─── SECTION 2: ABOUT ME ───
 export const ABOUT_ME = {
-  topLeft: 'Hatha Yoga · Sivananda Tradition',
+  topLeft: 'Hatha Yoga · Sivananda Inspired',
   topRight: 'Portfolio · 2026',
   heading: 'Julian Haylor',
   flankLeft: [
-    'Teaching in the',
+    'Rooted in',
+    'classical hatha.',
+    'Inspired by the',
     'Sivananda lineage.',
-    'Rooted in classical',
-    'hatha yoga.',
   ],
   flankRight: [
-    'Not a workout.',
     'A path inward.',
     'Breath before posture,',
     'stillness before strength.',
@@ -142,7 +141,7 @@ export const CLOSING = {
   sanskrit: '॥ लोकाः समस्ताः सुखिनो भवन्तु ॥',
   translation: 'May all beings everywhere be happy and free',
   name: 'Julian Haylor',
-  titleParts: ['Hatha Yoga Teacher', 'Sivananda Tradition'],
+  titleParts: ['Hatha Yoga Teacher', 'Sivananda Inspired'],
   socials: [
     { label: 'Instagram', url: 'https://instagram.com/julianhayloryoga' },
     { label: 'Email', url: 'mailto:haylorjulian@gmail.com' },
