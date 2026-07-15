@@ -28,7 +28,7 @@ function EgoDeath() {
           <h1>Ego Death Preparation Guide</h1>
           <p className="egodeath-thesis">
             Preparation is the single biggest lever you control over how a
-            high-dose psilocybin session unfolds. Practice one thing above all:
+            high-dose psilocybin session unfolds. Practise one thing above all:
             to let go.
           </p>
         </header>
@@ -49,12 +49,12 @@ function EgoDeath() {
                 <strong>The core skill is surrender, not control.</strong> The
                 most-tested orientation reduces to three words:{' '}
                 <em>Trust. Let Go. Be Open.</em> Ego death feels like dying or
-                dissolving — the instruction is to move toward it, not fight it. <OT />
+                dissolving — the instruction is to move towards it, not fight it. <OT />
               </li>
               <li>
                 <strong>Fear is expected and workable.</strong> “Difficult is not
-                the same as bad.” The plan for a hard moment is to turn toward it
-                with your facilitator, not escape it. <OT />
+                the same as bad.” The plan for a hard moment is to turn towards it
+                with your spacekeeper, not escape it. <OT />
               </li>
               <li>
                 <strong>Some conditions and drugs make this genuinely unsafe</strong>{' '}
@@ -80,7 +80,7 @@ function EgoDeath() {
             creates the opening; your mindset determines what you do with it.
           </p>
 
-          <h3>The one orientation to internalize: Trust · Let Go · Be Open</h3>
+          <h3>The one orientation to internalise: Trust · Let Go · Be Open</h3>
           <p>
             Developed by psychologist Bill Richards and used with essentially
             every Johns Hopkins participant, the “flight instructions” are the
@@ -89,7 +89,7 @@ function EgoDeath() {
           <ul>
             <li>
               <strong>Trust</strong> your mind, body, the process, and your
-              facilitator. You will not be left alone; physical safety is handled
+              spacekeeper. You will not be left alone; physical safety is handled
               so your attention can go fully inward.
             </li>
             <li>
@@ -111,15 +111,15 @@ function EgoDeath() {
               call “dread of ego dissolution” — does <strong>not</strong> rise
               much with dose; it rises with resistance and context. The same
               neurochemical state can be experienced as terror or transcendence,
-              and your stance toward it is the switch. <PR />
+              and your stance towards it is the switch. <PR />
             </p>
           </div>
 
           <h3>Working with fear and difficult imagery</h3>
           <ul>
             <li>
-              <strong>Move toward it.</strong> “If you see a monster, look it in
-              the eye and move toward it. Ask it: <em>what are you doing in my mind?</em>”
+              <strong>Move towards it.</strong> “If you see a monster, look it in
+              the eye and move towards it. Ask it: <em>what are you doing in my mind?</em>”
               Frightening images tend to transform or dissolve when approached. <OT />
             </li>
             <li>
@@ -133,7 +133,7 @@ function EgoDeath() {
             </li>
             <li>
               <strong>Difficult is not bad.</strong> A hard passage is frequently
-              the most valuable part — grief moving, a fear faced, a defense
+              the most valuable part — grief moving, a fear faced, a defence
               softening.
             </li>
           </ul>
@@ -165,7 +165,7 @@ function EgoDeath() {
             </li>
             <li>
               It can feel like <strong>dying</strong> — and people who move through
-              it often describe it afterward as among the most meaningful
+              it often describe it afterwards as among the most meaningful
               experiences of their lives. The feeling of dying is not a sign
               something is wrong. <PR />
             </li>
@@ -209,7 +209,7 @@ function EgoDeath() {
               experience. <OT />
             </li>
             <li>
-              <strong>The facilitator relationship:</strong> trust built{' '}
+              <strong>The spacekeeper relationship:</strong> trust built{' '}
               <em>before</em> the session is itself a named safety measure. Agree
               in advance on signals, consent for any reassuring touch, and that
               their role is to support, not direct. <PR />
@@ -280,7 +280,7 @@ function EgoDeath() {
                   <td data-label="When">1 week before</td>
                   <td data-label="Focus">
                     Confirm logistics. <strong>Stop recreational drug use</strong>;
-                    reduce alcohol and cannabis. Prioritize sleep.
+                    reduce alcohol and cannabis. Prioritise sleep.
                   </td>
                 </tr>
                 <tr>
@@ -310,7 +310,7 @@ function EgoDeath() {
             <li>
               <strong>A light or empty stomach speeds and smooths onset</strong>{' '}
               (~20–30 min vs. up to ~90 min full) and reduces a queasy come-up.
-              Follow your facilitator’s specific guidance. <OT />
+              Follow your spacekeeper’s specific guidance. <OT />
             </li>
             <li>
               <strong>Sleep the two nights before</strong> is one of the most
@@ -448,7 +448,7 @@ function EgoDeath() {
             </li>
             <li>
               <strong>Pregnancy or breastfeeding</strong>, and other severe or
-              unstable psychiatric conditions (clinical judgment). <PR />
+              unstable psychiatric conditions (clinical judgement). <PR />
             </li>
           </ul>
 
@@ -495,7 +495,7 @@ function EgoDeath() {
                   <td data-label="Drug">SSRIs / SNRIs</td>
                   <td data-label="Status">Mainly blunting</td>
                   <td data-label="Why">
-                    Chronic use tends to mute or flatten effects (desensitized
+                    Chronic use tends to mute or flatten effects (desensitised
                     5-HT2A) — an ego-death dose may not land. Adjusting is a
                     supervised decision, never DIY. <OT />
                   </td>
@@ -517,7 +517,7 @@ function EgoDeath() {
             Before dosing you should genuinely understand and agree to: the
             intensity and unpredictability of the experience, the possibility of
             intense fear or “dying,” the aftercare plan, your right to stop
-            participating at any point beforehand, and the facilitator’s role and
+            participating at any point beforehand, and the spacekeeper’s role and
             limits.
           </p>
         </section>
@@ -530,8 +530,8 @@ function EgoDeath() {
             <li>
               <strong>Spend your preparation energy on mindset and screening, in
               that order of safety and effort.</strong> A screened-safe person with
-              a surrender orientation and a trusted facilitator has stacked the odds
-              heavily in their favor.
+              a surrender orientation and a trusted spacekeeper has stacked the odds
+              heavily in their favour.
             </li>
             <li>
               <strong>The “let go” skill is trainable.</strong> Meditation,
@@ -543,7 +543,7 @@ function EgoDeath() {
               high-impact moves.
             </li>
             <li>
-              <strong>Book integration before you dose.</strong> Deciding afterward
+              <strong>Book integration before you dose.</strong> Deciding afterwards
               usually means it doesn’t happen.
             </li>
           </ul>
