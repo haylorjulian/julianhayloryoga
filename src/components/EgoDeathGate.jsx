@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import EgoDeath from './EgoDeath';
+import Mandala from './Mandala';
 import '../styles/EgoDeath.css';
 
 const PASSWORD = 'deathwithintention';
@@ -34,11 +35,14 @@ function EgoDeathGate() {
 
   return (
     <div className="egodeath-gate">
+      <div className="mandala-global" aria-hidden="true">
+        <Mandala />
+      </div>
       <div className="egodeath-gate-card">
         <p className="egodeath-gate-label">Private</p>
         <h1 className="egodeath-gate-title">Enter with intention</h1>
         <p className="egodeath-gate-hint">
-          This page is held behind a password. Enter it to continue.
+          This is a sacred space. Offer the password to enter.
         </p>
         <form className="egodeath-gate-form" onSubmit={handleSubmit}>
           <input
