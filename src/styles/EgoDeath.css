@@ -1,0 +1,462 @@
+/* ═══════════════════════════════════════════════════════
+   EGO-DEATH GUIDE  (password-gated /egodeath page)
+   A long-form editorial document styled with the site's
+   design tokens — cream paper, Cormorant serif headings,
+   Karla body. Not a scroll-snap section; a normal article.
+═══════════════════════════════════════════════════════ */
+
+/* Disable the global mandatory scroll-snap while on this page */
+html.no-snap { scroll-snap-type: none; }
+
+/* ───────────────────────── Password gate ──────────────── */
+
+.egodeath-gate {
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.25rem;
+  background: var(--paper);
+  position: relative;
+  z-index: 2;
+}
+
+.egodeath-gate-card {
+  width: 100%;
+  max-width: 26rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.egodeath-gate-label {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+}
+
+.egodeath-gate-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 6vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.egodeath-gate-hint {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  max-width: 22rem;
+}
+
+.egodeath-gate-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.egodeath-gate-input {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--warm);
+  padding: 0.6rem 0.25rem;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.4s ease;
+}
+
+.egodeath-gate-input::placeholder {
+  color: var(--muted);
+  opacity: 0.6;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.egodeath-gate-input:focus {
+  border-bottom-color: var(--accent);
+}
+
+.egodeath-gate-button {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--paper);
+  background: var(--accent);
+  border: none;
+  border-radius: 2px;
+  padding: 0.85rem 2.25rem;
+  cursor: pointer;
+  transition: background 0.4s ease, opacity 0.4s ease;
+}
+
+.egodeath-gate-button:hover { opacity: 0.88; }
+
+.egodeath-gate-error {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--accent);
+  min-height: 1.4em;
+}
+
+/* ───────────────────────── Document ───────────────────── */
+
+.egodeath {
+  width: 100%;
+  background: var(--paper);
+  position: relative;
+  z-index: 2;
+  padding: clamp(2.5rem, 7vw, 5rem) 1.25rem clamp(4rem, 9vw, 7rem);
+}
+
+.egodeath-wrap {
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+/* Masthead */
+.egodeath h1 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  /* vw-driven so the title always fits on a single line, from the
+     narrowest phones up to the 3.2rem cap on desktop. */
+  font-size: clamp(1.2rem, 6vw, 3.2rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  white-space: nowrap;
+  margin-bottom: 1rem;
+}
+
+.egodeath-thesis {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.15rem, 3vw, 1.4rem);
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 34rem;
+  margin-bottom: 2rem;
+}
+
+.egodeath-rule {
+  border: none;
+  border-top: 1px solid var(--warm);
+  margin: 2.5rem 0;
+}
+
+/* Section headers */
+.egodeath section { /* neutralise inherited global section rules */
+  min-height: 0;
+  width: auto;
+  display: block;
+  overflow: visible;
+  background: transparent;
+  scroll-snap-align: none;
+  margin-top: clamp(2.75rem, 6vw, 3.75rem);
+}
+
+.egodeath-kicker {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.65rem;
+}
+
+.egodeath h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(1.6rem, 4.5vw, 2.2rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.egodeath h3 {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+  margin: 2rem 0 0.5rem;
+}
+
+.egodeath p {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: var(--ink);
+  margin: 0.75rem 0;
+}
+
+.egodeath strong { font-weight: 600; color: var(--ink); }
+.egodeath em { font-style: italic; color: var(--accent); }
+
+.egodeath a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--warm);
+  transition: border-color 0.3s ease;
+}
+.egodeath a:hover { border-bottom-color: var(--accent); }
+
+/* Lists */
+.egodeath ul {
+  list-style: none;
+  margin: 0.85rem 0;
+  padding: 0;
+}
+
+.egodeath ul li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin: 0.55rem 0;
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.egodeath ul li::before {
+  content: '';
+  position: absolute;
+  left: 0.1rem;
+  top: 0.72em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.8;
+}
+
+/* Summary card */
+.egodeath-summary {
+  background: var(--breath);
+  border: 1px solid var(--warm);
+  border-radius: 10px;
+  padding: 1.5rem 1.75rem;
+  margin-top: 1.25rem;
+}
+
+.egodeath-summary ul { margin: 0; }
+.egodeath-summary ul li { margin: 0.85rem 0; }
+
+/* Callouts */
+.egodeath-callout {
+  border-left: 3px solid var(--accent);
+  background: var(--breath);
+  border-radius: 0 10px 10px 0;
+  padding: 1.1rem 1.35rem;
+  margin: 1.5rem 0;
+}
+
+.egodeath-callout p { margin: 0; }
+
+.egodeath-callout .egodeath-callout-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+/* Safety variant — warmer, more prominent */
+.egodeath-callout.egodeath-safety {
+  border-left-color: #9a3b34;
+  background: #f1e2db;
+}
+.egodeath-callout.egodeath-safety .egodeath-callout-label { color: #9a3b34; }
+
+/* Tags [PR] / [Other] */
+.egodeath-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  vertical-align: 0.1em;
+  padding: 0.1em 0.5em;
+  margin-left: 0.15em;
+  border: 1px solid var(--warm);
+  border-radius: 4px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.egodeath-tag.pr { color: var(--accent); border-color: var(--accent); }
+
+/* Tables */
+.egodeath-tablewrap {
+  overflow-x: auto;
+  margin: 1.4rem 0;
+  border: 1px solid var(--warm);
+  border-radius: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.egodeath table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 32rem;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+}
+
+.egodeath th,
+.egodeath td {
+  text-align: left;
+  padding: 0.75rem 0.95rem;
+  border-bottom: 1px solid var(--warm);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.egodeath thead th {
+  font-weight: 400;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--breath);
+}
+
+.egodeath tbody tr:last-child td { border-bottom: none; }
+
+.egodeath td:first-child {
+  font-weight: 400;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.egodeath td em, .egodeath td strong { font-family: var(--font-sans); }
+
+.egodeath-phase td:first-child { color: var(--accent); }
+
+/* Fine print */
+.egodeath-fine {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Sources */
+.egodeath-sources { margin-top: clamp(3rem, 7vw, 4rem); }
+
+.egodeath-sources h2 {
+  font-size: clamp(1.3rem, 4vw, 1.6rem);
+}
+
+.egodeath-sources h3 {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 1.6rem 0 0.6rem;
+}
+
+.egodeath-sources p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0.5rem 0;
+  padding-left: 1rem;
+  text-indent: -1rem;
+}
+
+.egodeath-sources em { color: var(--ink); font-style: italic; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .egodeath { padding: 3rem 1.25rem 4rem; }
+  .egodeath p,
+  .egodeath ul li { font-size: 1.02rem; }
+
+  /* Tables → stacked labeled cards. The wrapper stops framing/scrolling;
+     each row becomes its own card and each cell shows its column name. */
+  .egodeath-tablewrap {
+    border: none;
+    overflow: visible;
+    border-radius: 0;
+  }
+
+  .egodeath table { min-width: 0; }
+
+  .egodeath thead { display: none; }
+
+  .egodeath table,
+  .egodeath tbody,
+  .egodeath tr,
+  .egodeath td {
+    display: block;
+    width: 100%;
+  }
+
+  .egodeath tbody tr {
+    border: 1px solid var(--warm);
+    border-radius: 10px;
+    background: var(--breath);
+    padding: 0.35rem 1rem 0.75rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .egodeath tbody tr:last-child { margin-bottom: 0; }
+
+  .egodeath tbody td {
+    border-bottom: none;
+    padding: 0.55rem 0 0;
+    white-space: normal;
+  }
+
+  /* Column-name label above each value */
+  .egodeath tbody td::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.2rem;
+  }
+
+  /* First cell reads as the card's title */
+  .egodeath tbody td:first-child {
+    white-space: normal;
+    font-size: 1.02rem;
+    padding-top: 0.35rem;
+  }
+}
