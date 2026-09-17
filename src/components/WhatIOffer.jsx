@@ -63,28 +63,22 @@ function WhatIOfferSection() {
                 {WHAT_I_OFFER.pricingLabel && (
                   <dt className="offering-pricing-heading">
                     {WHAT_I_OFFER.pricingLabel}
+                    {item.durations && ` ${item.durations}`}
                   </dt>
                 )}
 
-                {item.durations && item.pricing && item.pricing.length > 0 && (
-                  <div className="offering-pricing-row offering-pricing-row-headers">
-                    <dt className="offering-pricing-label" aria-hidden="true" />
-                    <dd className="offering-pricing-price offering-pricing-durations">
-                      {item.durations}
-                    </dd>
-                  </div>
-                )}
+                <div className="offering-pricing-body">
+                  {item.pricing && item.pricing.map((tier, t) => (
+                    <div key={t} className="offering-pricing-row">
+                      <dt className="offering-pricing-label">{tier.label}</dt>
+                      <dd className="offering-pricing-price">{tier.price}</dd>
+                    </div>
+                  ))}
 
-                {item.pricing && item.pricing.map((tier, t) => (
-                  <div key={t} className="offering-pricing-row">
-                    <dt className="offering-pricing-label">{tier.label}</dt>
-                    <dd className="offering-pricing-price">{tier.price}</dd>
-                  </div>
-                ))}
-
-                {item.pricingNote && (!item.pricing || item.pricing.length === 0) && (
-                  <dd className="offering-pricing-note">{item.pricingNote}</dd>
-                )}
+                  {item.pricingNote && (!item.pricing || item.pricing.length === 0) && (
+                    <dd className="offering-pricing-note">{item.pricingNote}</dd>
+                  )}
+                </div>
               </dl>
             )}
 

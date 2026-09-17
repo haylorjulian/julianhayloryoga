@@ -154,10 +154,18 @@
   border-bottom: 1px solid var(--warm);
   display: flex;
   flex-direction: column;
-  gap: 0.12rem;
   line-height: 1.4;
-  height: 135px;
-  justify-content: space-between;
+  min-height: 5.5rem;
+}
+
+/* Pushes the tiers / bespoke note to the bottom of the pricing box so the
+   heading stays pinned under the top rule and the content sits just above
+   the bottom rule. */
+.offering-pricing-body {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
 }
 
 .offering-pricing-heading {
@@ -167,7 +175,7 @@
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0;
   line-height: 1.4;
 }
 
@@ -234,19 +242,16 @@
 
 /* Booking link — sits in the natural flow at the bottom of the card.
    CTA alignment across the three cards is now handled by the fixed
-   .offering-pricing height (135px), which keeps every card the same
+   .offering-pricing min-height (5.5rem), which keeps every card the same
    shape regardless of how many pricing tiers it contains.
    Hover behaviour matches the social links in the closing section. */
 .offering-cta {
   font-family: var(--font-sans);
   font-weight: 400;
   font-size: 0.7rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
   color: var(--ink);
   text-decoration: none;
   position: relative;
-  padding-bottom: 4px;
   align-self: flex-start;
   transition: color 0.4s ease;
 
@@ -322,12 +327,6 @@
      the auto margins leave odd gaps on a single-column layout. */
   .offering-card {
     height: auto;
-  }
-
-    .offering-card:last-of-type {
-      dl {
-        height: 60px;
-      }
   }
 
   .offering-label {

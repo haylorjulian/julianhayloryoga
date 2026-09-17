@@ -92,7 +92,7 @@ export const WHAT_I_OFFER = {
   leftMeta: ['Private', 'Group', 'Immersive'],
   bookingEmail: 'haylorjulian@gmail.com',
   ctaLabel: '/ Book',
-  pricingLabel: 'Pricing (1h/1.5hrs)',
+  pricingLabel: 'Pricing',
   items: [
     {
       label: '/ Private',
@@ -100,11 +100,10 @@ export const WHAT_I_OFFER = {
       imageUrl: '/images/prayerhands.png',
       imageAlt: 'Hands in añjali mudra during private practice',
       description: 'One-to-one sessions across central London, hosted in the comfort of your own home. Fully personalised — built around your body, your goals, and any injuries or restrictions we need to work around. A space to refine alignment, learn to self-adjust, and develop a practice you can carry into your own time.',
+      durations: '(1h / 1.5hrs)',
       pricing: [
-        { label: 'Intro session', price: '£50 / £75' },
-        { label: 'Single session', price: '£80 / £120' },
-        { label: 'Pack of 5', price: '£350 / £525' },
-        { label: 'Pack of 10', price: '£600 / £900' },
+        { label: 'Intro session', price: 'Free' },
+        { label: 'Single session', price: '£30 / £40' },
       ],
       subject: 'Enquiry — Private Session',
     },
@@ -114,11 +113,8 @@ export const WHAT_I_OFFER = {
       imageUrl: '/images/headshot.png',
       imageAlt: 'Julian Haylor portrait',
       description: 'Hosted from your home, available across most of London. Practise alongside friends, family, or colleagues — the same individual care as a private session, scaled to a small shared space and split across the group.',
-      pricing: [
-        { label: '2 people', price: '£50 / £75 each' },
-        { label: '3 people', price: '£40 / £60 each' },
-        { label: '4 – 6 people', price: '£30 / £45 each' },
-      ],
+      pricing: [],
+      pricingNote: 'Bespoke — on enquiry',
       subject: 'Enquiry — Group Classes',
     },
     {
